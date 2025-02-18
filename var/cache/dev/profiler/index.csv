@@ -3259,3 +3259,16 @@ b84431,172.18.0.1,GET,http://localhost:8888/,1739541532,,500,request
 4f1dde,172.18.0.1,GET,http://localhost:8888/saveAutoPartsApi,1739541595,08d4b8,500,request
 08d4b8,172.18.0.1,GET,http://localhost:8888/saveAutoPartsApi,1739541595,,500,request
 57d50f,172.18.0.1,GET,http://localhost:8888/,1739868971,,200,request
+35a9f1,172.18.0.1,GET,http://localhost:8889/,1739874844,,200,request
+fdbcac,172.18.0.1,GET,http://localhost:8889/favicon.ico,1739874846,dd5bd4,404,request
+dd5bd4,172.18.0.1,GET,http://localhost:8889/favicon.ico,1739874846,,404,request
+e1fca4,172.18.0.1,GET,http://localhost:8889/searchPartNumbers,1739874857,c9c113,500,request
+c9c113,172.18.0.1,GET,http://localhost:8889/searchPartNumbers,1739874857,,500,request
+8c6d81,172.18.0.1,GET,http://localhost:8889/,1739880333,,200,request
+4fda94,172.18.0.1,GET,http://localhost:8889/searchPartNumbers,1739880712,42878e,500,request
+42878e,172.18.0.1,GET,http://localhost:8889/searchPartNumbers,1739880712,,500,request
+ed45ec,172.18.0.1,GET,http://localhost:8889/searchPartNumbers,1739881514,,200,request
+1aaa2c,172.18.0.1,GET,http://localhost:8889/searchPartNumbers,1739881523,,200,request
+178d30,172.18.0.1,GET,http://localhost:8889/searchCounterparty,1739881527,,200,request
+f7e020,172.18.0.1,GET,http://localhost:8889/,1739882222,,200,request
+33fbf2,172.18.0.1,GET,http://localhost:8889/,1739882840,,200,request
