@@ -1,0 +1,5 @@
+services:
+    SecIT\ImapBundle\Command\ValidateConnectionsCommand:
+        public: false
+        tags: [console.command]
+        autowire: true

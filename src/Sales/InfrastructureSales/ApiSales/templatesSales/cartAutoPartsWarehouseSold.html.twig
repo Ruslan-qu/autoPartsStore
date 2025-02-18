@@ -1,0 +1,268 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title_logo }}{% endblock title %}
+
+{% block logo %}{{title_logo}}{% endblock logo %}
+
+{% block Responsive_behaviors %}
+<nav class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+  {% endblock Responsive_behaviors %}
+
+  {% block form %}
+
+  {#Таблица автодеталей#}
+
+  <div class="container-fluid text-center pt-3">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped-columns table-sm align-middle 
+        border-info shadow mb-4 bg-body-tertiary rounded">
+        <thead class="table-secondary">
+          {% for information in car_parts_for_sale %}
+          {% if information %}
+          <tr>
+            <th scope="col">№<br>детали</th>
+            <th scope="col">№<br>оригинал</th>
+            <th scope="col">Производитель</th>
+            <th scope="col">Описание<br>детали</th>
+            <th scope="col">Название<br>детали</th>
+            <th scope="col">Марка</th>
+            <th scope="col">Сторона</th>
+            <th scope="col">Кузов</th>
+            <th scope="col">Перед<br>Зад</th>
+            <th scope="col">Сп.<br>оплаты</th>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </thead>
+
+        <tbody class="table-group-divider">
+          {% for information in car_parts_for_sale %}
+          {% if information %}
+          <tr>
+            <td>{{ information.getIdDetails.getPartNumber() }}</td>
+            <td>{{ information.getIdDetails.getIdOriginalNumber().getOriginalNumber()|default('') }}</td>
+            <td>{{ information.getIdDetails.getManufacturer() }}</td>
+            <td>{{ information.getIdDetails.getAdditionalDescriptions() }}</td>
+            <td>{{ information.getIdDetails.getIdPartName().getPartName()|default('') }}</td>
+            <td>{{ information.getIdDetails.getIdCarBrand().getCarBrand()|default('') }}</td>
+            <td>{{ information.getIdDetails.getIdSide().getSide()|default('') }}</td>
+            <td>{{ information.getIdDetails.getIdBody().getBody()|default('') }}</td>
+            <td>{{ information.getIdDetails.getIdAxle().getAxle()|default('') }}</td>
+            <td>{{ information.getIdPaymentMethod.getmethod()|default('') }}</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center pt-3">
+
+    <div class="row">
+      <div class="col-sm-12 col-lg-6 col-xl-6">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped-columns table-sm align-middle 
+        border-info shadow mb-4 bg-body-tertiary rounded">
+            <thead class="table-secondary">
+
+              {% for information in car_parts_for_sale %}
+              {% if information %}
+              <tr>
+                <th scope="col">Кол-во</th>
+                <th scope="col">Цена шт</th>
+                <th scope="col">Цена общая</th>
+              </tr>
+              {% endif %}
+              {% endfor %}
+
+            </thead>
+            <tbody class="table-group-divider">
+              {% for information in car_parts_for_sale %}
+              {% if information %}
+              <tr>
+                <td>{{ (information.getQuantity() - information.getQuantitySold())|default('') }}</td>
+                <td>{% if (information.getQuantity() - information.getQuantitySold()) != 0 %}
+                  {{ ((information.getPrice() / 100)
+                  / information.getQuantity())|default('')|number_format(2,'.','')}}
+                  {% else %}
+                  {{0}}
+                  {% endif %}</td>
+                <td>{{ (((information.getPrice() / 100) / information.getQuantity())
+                  * (information.getQuantity()- information.getQuantitySold()))|default('') }}</td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      {#Форма добавление в корзину деталей#}
+      <div class="col-sm-12 col-lg-6 col-xl-6">
+        {{ form_start(form_cart_auto_parts_warehouse_sold) }}
+
+        <div class="row justify-content-start">
+
+          <div class="col-sm-4 col-lg-4 col-xl-4">
+            <div class="lb">{{ form_label(form_cart_auto_parts_warehouse_sold.date_sold) }}</div>
+            {{ form_widget(form_cart_auto_parts_warehouse_sold.date_sold, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_cart_auto_parts_warehouse_sold.date_sold) |nl2br }}
+            {% for message in app.flashes('[date_sold]') %}
+            {{ message }}
+            {% endfor %}
+          </div>
+
+          <div class="col-sm-4 col-lg-4 col-xl-4">
+            <div class="lb">{{ form_label(form_cart_auto_parts_warehouse_sold.quantity_sold) }}</div>
+            {{ form_widget(form_cart_auto_parts_warehouse_sold.quantity_sold, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_cart_auto_parts_warehouse_sold.quantity_sold) |nl2br }}
+            {% for messages in app.flashes(['[quantity_sold_error][Range]', '[quantity_sold_error][NotBlank]']) %}
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+            {% else %}
+            {% for message in app.flashes('[quantity_sold_auto_parts_warehouse_error]') %}
+            {{ message }}
+            {% endfor %}
+            {% endfor %}
+          </div>
+
+          <div class="col-sm-4 col-lg-4 col-xl-4">
+            <div class="lb">{{ form_label(form_cart_auto_parts_warehouse_sold.price_sold) }}</div>
+            {{ form_widget(form_cart_auto_parts_warehouse_sold.price_sold, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_cart_auto_parts_warehouse_sold.price_sold) |nl2br }}
+            {% for message in app.flashes('[price_sold_error][NotBlank]') %}
+            {{ message }}
+            {% endfor %}
+          </div>
+
+
+
+          {% for information in car_parts_for_sale %}
+          {% if information %}
+          {{ form_widget(form_cart_auto_parts_warehouse_sold.id_auto_parts_warehouse, { value : information.getId() })
+          }}
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-2 pt-2">
+      <div class="col-sm-12 col-lg-12 col-xl-12">
+        {{ form_widget(form_cart_auto_parts_warehouse_sold.button_add_cart,
+        { 'label': 'Добавить в корзину', 'attr': {'class': 'btn btn-success w-100'}}) }}
+      </div>
+    </div>
+
+  </div>
+
+  {{ form_end(form_cart_auto_parts_warehouse_sold) }}
+
+  {% endblock form %}
+
+
+  {% block table %}
+
+  {#Таблица автодеталей на складе#}
+
+  <div class="container-fluid text-center pt-3">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped-columns table-sm align-middle 
+        border-info shadow p-3 mb-3 bg-body-tertiary rounded">
+        <thead class="table-secondary">
+
+          {% if cartAutoParts %}
+
+          <tr>
+            <th scope="col">№<br>детали</th>
+            <th scope="col">Производитель</th>
+            <th scope="col">Название<br>детали</th>
+            <th scope="col">Марка</th>
+            <th scope="col">Сторона</th>
+            <th scope="col">Кузов</th>
+            <th scope="col">Перед<br>Зад</th>
+            <th scope="col">Дата</th>
+            <th scope="col">Кол-во</th>
+            <th scope="col">Цена</th>
+            <th scope="col">{{ ux_icon('bx:edit', {'height': '30', 'width': '30'}) }}</th>
+            <th scope="col">{{ ux_icon('iconoir:delete-circle', {'height': '30', 'width': '30'}) }}</th>
+          </tr>
+          {% endif %}
+
+
+        </thead>
+        <tbody class="table-group-divider">
+          {% for information in cartAutoParts %}
+          {% if information %}
+
+          <tr>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getPartNumber() }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getManufacturer() }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdPartName().getPartName()|default('') }}
+            </td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdCarBrand().getCarBrand()|default('') }}
+            </td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdSide().getSide()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdBody().getBody()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdAxle().getAxle()|default('') }}</td>
+            <td>{{ information.getDateSold()|date("d-m-Y")|default('') }}</td>
+            <td>{{ information.getQuantitySold()|default('') }}</td>
+            <td>{{ (information.getPriceSold() / 100)|default('') }}</td>
+
+            <form action="/editСartAutoPartsWarehouseSold" name="edit_cart_auto_parts_warehouse_sold">
+
+              <td><button class="btn btn-outline-secondary" type="submit" name="id" value="{{ information.getId() }}">{{
+                  ux_icon('bx:edit', {'height': '30', 'width': '30'}) }}</button></td>
+
+            </form>
+            <form action="/deleteСartAutoPartsWarehouseSold" name="delete_cart_auto_parts_warehouse_sold">
+
+              <td><button class="btn btn-outline-danger" type="submit" name="id" value="{{ information.getId() }}">{{
+                  ux_icon('iconoir:delete-circle', {'height': '30', 'width': '30'}) }}</button></td>
+
+            </form>
+          </tr>
+          {% endif %}
+          {% endfor %}
+
+        </tbody>
+        <tfoot>
+          {% if cartAutoParts %}
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Общая<br>сумма</td>
+            <td>{{ (sum_price_sold_cart_auto_parts / 100)|default('') }}</td>
+            <td></td>
+            <td></td>
+          </tr>
+          {% endif %}
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  {% if cartAutoParts %}
+  {#Форма продажи деталей в корзине#}
+  <div class="container-fluid text-center my-2 pt-2">
+    {{ form_start(form_completion_sale, {'action': path('completion_sale')}) }}
+
+    <div class="row">
+      <div class="col-sm-12 col-lg-12 col-xl-12">
+        {{ form_widget(form_completion_sale.button_completion_sale,
+        { 'label': 'Продать', 'attr': {'class': 'btn btn-danger w-100'}}) }}
+      </div>
+    </div>
+
+    {{ form_end(form_completion_sale) }}
+  </div>
+  {% endif %}
+  {% endblock table %}

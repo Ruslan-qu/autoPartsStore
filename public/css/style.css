@@ -1,0 +1,12 @@
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.dropdown-menu {
+    Min-width: auto;
+}
+
+.button_search {
+    width: 14rem !important;
+}

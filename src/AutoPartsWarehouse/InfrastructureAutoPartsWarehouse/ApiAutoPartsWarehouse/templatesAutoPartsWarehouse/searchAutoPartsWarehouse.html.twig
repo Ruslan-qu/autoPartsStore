@@ -1,0 +1,149 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title_logo }}{% endblock title %}
+
+{% block logo %}{{title_logo}}{% endblock logo %}
+
+{% block Responsive_behaviors %}
+<nav class="navbar navbar-expand-xl bg-dark" data-bs-theme="dark">
+  {% endblock Responsive_behaviors %}
+
+  {% block form %}
+
+  {#Форма сохранения номеров деталей#}
+
+  {{ form_start(form_search_auto_parts_warehouse) }}
+
+  <div class="container-fluid text-center mt-3">
+
+    <div class="row justify-content-start">
+
+      <div class="col-sm-4 col-lg-4 col-xl-2">
+        <div class="lb">{{ form_label(form_search_auto_parts_warehouse.id_part_name) }}</div>
+        {{ form_widget(form_search_auto_parts_warehouse.id_part_name, { 'attr': {'class': 'w-100'} }) }}
+        {{ form_errors(form_search_auto_parts_warehouse.id_part_name) |nl2br }}
+      </div>
+
+      <div class="col-sm-3 col-lg-3 col-xl-1">
+        <div class="lb">{{ form_label(form_search_auto_parts_warehouse.id_car_brand) }}</div>
+        {{ form_widget(form_search_auto_parts_warehouse.id_car_brand, { 'attr': {'class': 'w-100'} }) }}
+        {{ form_errors(form_search_auto_parts_warehouse.id_car_brand) |nl2br }}
+      </div>
+
+      <div class="col-sm-3 col-lg-3 col-xl-1">
+        <div class="lb">{{ form_label(form_search_auto_parts_warehouse.id_side) }}</div>
+        {{ form_widget(form_search_auto_parts_warehouse.id_side, { 'attr': {'class': 'w-100'} }) }}
+        {{ form_errors(form_search_auto_parts_warehouse.id_side) |nl2br }}
+      </div>
+
+      <div class="col-sm-3 col-lg-3 col-xl-1">
+        <div class="lb">{{ form_label(form_search_auto_parts_warehouse.id_body) }}</div>
+        {{ form_widget(form_search_auto_parts_warehouse.id_body, { 'attr': {'class': 'w-100'} }) }}
+        {{ form_errors(form_search_auto_parts_warehouse.id_body) |nl2br }}
+      </div>
+
+      <div class="col-sm-4 col-lg-4 col-xl-1">
+        <div class="lb">{{ form_label(form_search_auto_parts_warehouse.id_axle) }}</div>
+        {{ form_widget(form_search_auto_parts_warehouse.id_axle, { 'attr': {'class': 'w-100'} }) }}
+        {{ form_errors(form_search_auto_parts_warehouse.id_axle) |nl2br }}
+      </div>
+
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-sm-10 col-lg-10 col-xl-6">
+        {{ form_widget(form_search_auto_parts_warehouse.button_search_auto_parts_warehouse,
+        { 'label': 'Поиск', 'attr': {'class': 'btn btn-primary w-100'}}) }}
+      </div>
+    </div>
+
+  </div>
+
+  {{ form_end(form_search_auto_parts_warehouse) }}
+
+  {% for messages in app.flashes(['delete','Error']) %}
+  {% for message in messages %}
+    <h5 class="mt-3 ms-3">{{ message }}</h5>
+  {% endfor %}
+  {% endfor %}
+  {% endblock form %}
+
+  {% block table %}
+
+  {#Таблица автодеталей на складе#}
+
+  <div class="container-fluid text-center pt-4 ">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped-columns table-sm align-middle 
+        border-info shadow p-3 mb-5 bg-body-tertiary rounded">
+        <thead class="table-secondary">
+
+          {% if search_data %}
+          <tr>
+            <th scope="col">№<br>детали</th>
+            <th scope="col">№<br>оригинал</th>
+            <th scope="col">Производитель</th>
+            <th scope="col">Описание<br>детали</th>
+            <th scope="col">Название<br>детали</th>
+            <th scope="col">Марка</th>
+            <th scope="col">Сторона</th>
+            <th scope="col">Кузов</th>
+            <th scope="col">Перед<br>Зад</th>
+            <th scope="col">Сп.<br>оплаты</th>
+            <th scope="col">Кол-во</th>
+            <th scope="col">Цена<br>шт</th>
+            <th scope="col">Цена<br>общая</th>
+            <th scope="col">{{ ux_icon('bi:basket2', {'height': '30', 'width': '30'}) }}</th>
+            <th scope="col">{{ ux_icon('bx:edit', {'height': '30', 'width': '30'}) }}</th>
+            <th scope="col">{{ ux_icon('iconoir:delete-circle', {'height': '30', 'width': '30'}) }}</th>
+          </tr>
+          {% endif %}
+
+        </thead>
+        <tbody class="table-group-divider">
+          {% for information in search_data %}
+          {% if information %}
+
+          <tr>
+            <td>{{ information.getIdDetails.getPartNumber() }}</td>
+            <td>{{ information.getIdDetails.getIdOriginalNumber().getOriginalNumber()|default('') }}</td>
+            <td>{{ information.getIdDetails.getManufacturer() }}</td>
+            <td>{{ information.getIdDetails.getAdditionalDescriptions() }}</td>
+            <td>{{ information.getIdDetails.getIdPartName().getPartName()|default('') }}</td>
+            <td>{{ information.getIdDetails.getIdCarBrand().getCarBrand()|default('') }}</td>
+            <td>{{ information.getIdDetails.getIdSide().getSide()|default('') }}</td>
+            <td>{{ information.getIdDetails.getIdBody().getBody()|default('') }}</td>
+            <td>{{ information.getIdDetails.getIdAxle().getAxle()|default('') }}</td>
+            <td>{{ information.getIdPaymentMethod.getmethod()|default('') }}</td>
+            <td>{{ (information.getQuantity() - information.getQuantitySold())|default('') }}</td>
+            <td>{{ ((information.getPrice() / 100) / information.getQuantity())|default('')|number_format(2, '.', '') }}
+            </td>
+            <td>{{ (((information.getPrice() / 100) / information.getQuantity())
+              * (information.getQuantity()- information.getQuantitySold()))|default('') }}</td>
+
+            <form action="cartAutoPartsWarehouseSold" name="cart_auto_parts_warehouse_sold">
+
+              <td><button class="btn btn-outline-success" type="submit" name="id" value="{{ information.getId() }}">{{
+                  ux_icon('bi:basket2', {'height': '30', 'width': '30'}) }}</button></td>
+
+            </form>
+            <form action="/editAutoPartsWarehouse" name="edit_auto_parts_warehouse">
+
+              <td><button class="btn btn-outline-secondary" type="submit" name="id" value="{{ information.getId() }}">{{
+                  ux_icon('bx:edit', {'height': '30', 'width': '30'}) }}</button></td>
+
+            </form>
+            <form action="/deleteAutoPartsWarehouse" name="delete_auto_parts_warehouse">
+
+              <td><button class="btn btn-outline-danger" type="submit" name="id" value="{{ information.getId() }}">{{
+                  ux_icon('iconoir:delete-circle', {'height': '30', 'width': '30'}) }}</button></td>
+
+            </form>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock table %}

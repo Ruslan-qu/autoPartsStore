@@ -1,0 +1,69 @@
+##################
+# Docker compose
+##################
+
+build:
+	docker compose -f ./docker/docker-compose.yml build 
+
+start:
+	docker compose -f ./docker/docker-compose.yml start
+
+stop:
+	docker compose -f ./docker/docker-compose.yml stop
+
+up:
+	docker compose -f ./docker/docker-compose.yml up -d --remove-orphans
+
+down:
+	docker compose -f ./docker/docker-compose.yml down
+
+restart: stop start
+
+dc_ps:
+	docker compose -f ./docker/docker-compose.yml ps
+
+dc_logs:
+	docker compose -f ./docker/docker-compose.yml logs -f
+
+dc_down:
+	docker compose -f ./docker/docker-compose.yml down -v --rmi=all --remove-orphans
+
+dc_restart:
+	make dc_stop dc_start
+
+
+##################
+# App
+##################
+
+app_bash:
+	docker compose -f ./docker/docker-compose.yml exec -u www-data php-fpm bash
+test:
+	docker compose -f ./docker/docker-compose.yml exec -u www-data php-fpm bin/phpunit
+cache:
+	docker-compose -f ./docker/docker-compose.yml exec -u www-data php-fpm bin/console cache:clear
+	docker-compose -f ./docker/docker-compose.yml exec -u www-data php-fpm bin/console cache:clear --env=test
+
+##################
+# Database
+##################
+php bin/console make:entity #создания или обновления
+
+php bin/console make:entity --regenerate # генерировать методы геттеров и сеттеров
+
+php bin/console make:migration
+
+php bin/console doctrine:migrations:migrate
+
+##################
+# make:controller
+##################
+
+php bin/console make:controller
+
+##################
+# make:form
+##################
+
+php bin/console make:form
+php bin/console make:registration-form

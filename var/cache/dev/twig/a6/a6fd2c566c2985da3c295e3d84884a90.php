@@ -1,0 +1,790 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+
+/* sales/searchSales.html.twig */
+class __TwigTemplate_2c096d396ddb74649eec474ef60f2ff7 extends Template
+{
+    private $source;
+    private $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'logo' => [$this, 'block_logo'],
+            'Responsive_behaviors' => [$this, 'block_Responsive_behaviors'],
+            'form' => [$this, 'block_form'],
+            'table' => [$this, 'block_table'],
+        ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sales/searchSales.html.twig"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sales/searchSales.html.twig"));
+
+        $this->parent = $this->loadTemplate("base.html.twig", "sales/searchSales.html.twig", 1);
+        yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 3
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["title_logo"]) || array_key_exists("title_logo", $context) ? $context["title_logo"] : (function () { throw new RuntimeError('Variable "title_logo" does not exist.', 3, $this->source); })()), "html", null, true);
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 5
+    public function block_logo($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "logo"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "logo"));
+
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["title_logo"]) || array_key_exists("title_logo", $context) ? $context["title_logo"] : (function () { throw new RuntimeError('Variable "title_logo" does not exist.', 5, $this->source); })()), "html", null, true);
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 7
+    public function block_Responsive_behaviors($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "Responsive_behaviors"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "Responsive_behaviors"));
+
+        // line 8
+        yield "<nav class=\"navbar navbar-expand-md bg-dark\" data-bs-theme=\"dark\">
+  ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 11
+    public function block_form($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "form"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "form"));
+
+        // line 12
+        yield "
+  ";
+        // line 14
+        yield "
+  ";
+        // line 15
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 15, $this->source); })()), 'form_start');
+        yield "
+  <div class=\"container-fluid text-center mt-3\">
+    <div class=\"row\">
+
+      <div class=\"col-lg-12 col-xl-7 col-xxl-7\">
+        <div class=\"row\">
+
+          <div class=\"col-sm-6 col-md-3 col-lg-3\">
+            <div class=\"lb\">";
+        // line 23
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 23, $this->source); })()), "part_number", [], "any", false, false, false, 23), 'label');
+        yield "</div>
+            ";
+        // line 24
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 24, $this->source); })()), "part_number", [], "any", false, false, false, 24), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 25
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 25, $this->source); })()), "part_number", [], "any", false, false, false, 25), 'errors'));
+        yield "
+          </div>
+
+          <div class=\"col-sm-6 col-md-3 col-lg-3\">
+            <div class=\"lb\">";
+        // line 29
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 29, $this->source); })()), "original_number", [], "any", false, false, false, 29), 'label');
+        yield "</div>
+            ";
+        // line 30
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 30, $this->source); })()), "original_number", [], "any", false, false, false, 30), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 31
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 31, $this->source); })()), "original_number", [], "any", false, false, false, 31), 'errors'));
+        yield "
+          </div>
+
+
+          <div class=\"col-sm-6 col-md-3 col-lg-3\">
+            <div class=\"lb\">";
+        // line 36
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 36, $this->source); })()), "from_date_sold", [], "any", false, false, false, 36), 'label');
+        yield "</div>
+            ";
+        // line 37
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 37, $this->source); })()), "from_date_sold", [], "any", false, false, false, 37), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 38
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 38, $this->source); })()), "from_date_sold", [], "any", false, false, false, 38), 'errors'));
+        yield "
+            ";
+        // line 39
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 39, $this->source); })()), "flashes", ["[date_sold]"], "method", false, false, false, 39));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 40
+            yield "            ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
+            yield "
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 42
+        yield "          </div>
+
+
+          <div class=\"col-sm-6 col-md-3 col-lg-3\">
+            <div class=\"lb\">";
+        // line 46
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 46, $this->source); })()), "to_date_sold", [], "any", false, false, false, 46), 'label');
+        yield "</div>
+            ";
+        // line 47
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 47, $this->source); })()), "to_date_sold", [], "any", false, false, false, 47), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 48
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 48, $this->source); })()), "to_date_sold", [], "any", false, false, false, 48), 'errors'));
+        yield "
+            ";
+        // line 49
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 49, $this->source); })()), "flashes", ["[date_sold]"], "method", false, false, false, 49));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 50
+            yield "            ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
+            yield "
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 52
+        yield "          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class=\"col-lg-12 col-xl-5 col-xxl-5\">
+        <div class=\"row justify-content-evenly\">
+
+          <div class=\"col-6\">
+            <div class=\"lb\">";
+        // line 63
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 63, $this->source); })()), "id_part_name", [], "any", false, false, false, 63), 'label');
+        yield "</div>
+            ";
+        // line 64
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 64, $this->source); })()), "id_part_name", [], "any", false, false, false, 64), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 65
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 65, $this->source); })()), "id_part_name", [], "any", false, false, false, 65), 'errors'));
+        yield "
+          </div>
+
+          <div class=\"col-3\">
+            <div class=\"lb\">";
+        // line 69
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 69, $this->source); })()), "id_car_brand", [], "any", false, false, false, 69), 'label');
+        yield "</div>
+            ";
+        // line 70
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 70, $this->source); })()), "id_car_brand", [], "any", false, false, false, 70), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 71
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 71, $this->source); })()), "id_car_brand", [], "any", false, false, false, 71), 'errors'));
+        yield "
+          </div>
+
+          <div class=\"col-3\">
+            <div class=\"lb\">";
+        // line 75
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 75, $this->source); })()), "id_side", [], "any", false, false, false, 75), 'label');
+        yield "</div>
+            ";
+        // line 76
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 76, $this->source); })()), "id_side", [], "any", false, false, false, 76), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 77
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 77, $this->source); })()), "id_side", [], "any", false, false, false, 77), 'errors'));
+        yield "
+          </div>
+        </div>
+        <div class=\"row justify-content-evenly\">
+
+        <div class=\"col-6\">
+            <div class=\"lb\">";
+        // line 83
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 83, $this->source); })()), "id_counterparty", [], "any", false, false, false, 83), 'label');
+        yield "</div>
+            ";
+        // line 84
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 84, $this->source); })()), "id_counterparty", [], "any", false, false, false, 84), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 85
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 85, $this->source); })()), "id_counterparty", [], "any", false, false, false, 85), 'errors'));
+        yield "
+          </div>
+
+          <div class=\"col-3\">
+            <div class=\"lb\">";
+        // line 89
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 89, $this->source); })()), "id_body", [], "any", false, false, false, 89), 'label');
+        yield "</div>
+            ";
+        // line 90
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 90, $this->source); })()), "id_body", [], "any", false, false, false, 90), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 91
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 91, $this->source); })()), "id_body", [], "any", false, false, false, 91), 'errors'));
+        yield "
+          </div>
+
+          <div class=\"col-3\">
+            <div class=\"lb\">";
+        // line 95
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 95, $this->source); })()), "id_axle", [], "any", false, false, false, 95), 'label');
+        yield "</div>
+            ";
+        // line 96
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 96, $this->source); })()), "id_axle", [], "any", false, false, false, 96), 'widget', ["attr" => ["class" => "w-100"]]);
+        yield "
+            ";
+        // line 97
+        yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 97, $this->source); })()), "id_axle", [], "any", false, false, false, 97), 'errors'));
+        yield "
+          </div>
+
+          
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class=\"row mt-3\">
+      <div class=\"col-12 d-grid gap-2\">
+        ";
+        // line 110
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 110, $this->source); })()), "button_search_sales", [], "any", false, false, false, 110), 'widget', ["label" => "Поиск", "attr" => ["class" => "btn
+        btn-primary"]]);
+        // line 111
+        yield "
+      </div>
+    </div>
+
+  </div>
+
+  ";
+        // line 117
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form_search_sales"]) || array_key_exists("form_search_sales", $context) ? $context["form_search_sales"] : (function () { throw new RuntimeError('Variable "form_search_sales" does not exist.', 117, $this->source); })()), 'form_end');
+        yield "
+
+  ";
+        // line 119
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 119, $this->source); })()), "flashes", [["delete", "Error", "successfully"]], "method", false, false, false, 119));
+        foreach ($context['_seq'] as $context["_key"] => $context["messages"]) {
+            // line 120
+            yield "  ";
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable($context["messages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 121
+                yield "    <h2 class=\"mt-3 ms-3\">";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
+                yield "</h2>
+  ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 123
+            yield "  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['messages'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 124
+        yield "  ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    // line 127
+    public function block_table($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "table"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "table"));
+
+        // line 128
+        yield "
+  ";
+        // line 130
+        yield "
+ <div class=\"container-fluid text-center pt-4 \">
+    <div class=\"table-responsive\">
+      <table class=\"table table-bordered table-hover table-striped-columns table-sm align-middle 
+        border-info shadow p-3 mb-5 bg-body-tertiary rounded\">
+        <thead class=\"table-secondary\">
+
+          
+          ";
+        // line 138
+        if ((isset($context["list_sales_auto_parts"]) || array_key_exists("list_sales_auto_parts", $context) ? $context["list_sales_auto_parts"] : (function () { throw new RuntimeError('Variable "list_sales_auto_parts" does not exist.', 138, $this->source); })())) {
+            // line 139
+            yield "          <tr>
+            <th scope=\"col\">№<br>детали</th>
+            <th scope=\"col\">№<br>оригинал</th>
+            <th scope=\"col\">Производитель</th>
+            <th scope=\"col\">Описание<br>детали</th>
+            <th scope=\"col\">Название<br>детали</th>
+            <th scope=\"col\">Марка</th>
+            <th scope=\"col\">Сторона</th>
+            <th scope=\"col\">Кузов</th>
+            <th scope=\"col\">Перед<br>Зад</th>
+            <th scope=\"col\">Дата</th>
+            <th scope=\"col\">Кол-во</th>
+            <th scope=\"col\">Цена</th>
+            <th scope=\"col\">";
+            // line 152
+            yield $this->env->getRuntime('Symfony\UX\Icons\Twig\UXIconRuntime')->renderIcon("bx:edit", ["height" => "30", "width" => "30"]);
+            yield "</th>
+            <th scope=\"col\">";
+            // line 153
+            yield $this->env->getRuntime('Symfony\UX\Icons\Twig\UXIconRuntime')->renderIcon("iconoir:delete-circle", ["height" => "30", "width" => "30"]);
+            yield "</th>
+          </tr>
+           ";
+        }
+        // line 156
+        yield "           
+
+        </thead>
+        <tbody class=\"table-group-divider\">
+          ";
+        // line 160
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["list_sales_auto_parts"]) || array_key_exists("list_sales_auto_parts", $context) ? $context["list_sales_auto_parts"] : (function () { throw new RuntimeError('Variable "list_sales_auto_parts" does not exist.', 160, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["information"]) {
+            // line 161
+            yield "            ";
+            if ($context["information"]) {
+                // line 162
+                yield "
+          <tr>
+            <td>";
+                // line 164
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, false, false, 164), "getIdDetails", [], "method", false, false, false, 164), "getPartNumber", [], "method", false, false, false, 164), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 165
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 165), "getIdDetails", [], "method", false, true, false, 165), "getIdOriginalNumber", [], "method", false, true, false, 165), "getOriginalNumber", [], "method", true, true, false, 166)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 165), "getIdDetails", [], "method", false, true, false, 165), "getIdOriginalNumber", [], "method", false, true, false, 165), "getOriginalNumber", [], "method", false, false, false, 166), "")) : ("")), "html", null, true);
+                // line 166
+                yield "</td>
+            <td>";
+                // line 167
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 167), "getIdDetails", [], "method", false, true, false, 167), "getManufacturer", [], "method", true, true, false, 167)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 167), "getIdDetails", [], "method", false, true, false, 167), "getManufacturer", [], "method", false, false, false, 167), "")) : ("")), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 168
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 168), "getIdDetails", [], "method", false, true, false, 168), "getAdditionalDescriptions", [], "method", true, true, false, 168)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 168), "getIdDetails", [], "method", false, true, false, 168), "getAdditionalDescriptions", [], "method", false, false, false, 168), "")) : ("")), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 169
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 169), "getIdDetails", [], "method", false, true, false, 169), "getIdPartName", [], "method", false, true, false, 169), "getPartName", [], "method", true, true, false, 169)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 169), "getIdDetails", [], "method", false, true, false, 169), "getIdPartName", [], "method", false, true, false, 169), "getPartName", [], "method", false, false, false, 169), "")) : ("")), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 170
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 170), "getIdDetails", [], "method", false, true, false, 170), "getIdCarBrand", [], "method", false, true, false, 170), "getCarBrand", [], "method", true, true, false, 170)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 170), "getIdDetails", [], "method", false, true, false, 170), "getIdCarBrand", [], "method", false, true, false, 170), "getCarBrand", [], "method", false, false, false, 170), "")) : ("")), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 171
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 171), "getIdDetails", [], "method", false, true, false, 171), "getIdSide", [], "method", false, true, false, 171), "getSide", [], "method", true, true, false, 171)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 171), "getIdDetails", [], "method", false, true, false, 171), "getIdSide", [], "method", false, true, false, 171), "getSide", [], "method", false, false, false, 171), "")) : ("")), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 172
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 172), "getIdDetails", [], "method", false, true, false, 172), "getIdBody", [], "method", false, true, false, 172), "getBody", [], "method", true, true, false, 172)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 172), "getIdDetails", [], "method", false, true, false, 172), "getIdBody", [], "method", false, true, false, 172), "getBody", [], "method", false, false, false, 172), "")) : ("")), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 173
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 173), "getIdDetails", [], "method", false, true, false, 173), "getIdAxle", [], "method", false, true, false, 173), "getAxle", [], "method", true, true, false, 173)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getIdAutoPartsWarehouse", [], "method", false, true, false, 173), "getIdDetails", [], "method", false, true, false, 173), "getIdAxle", [], "method", false, true, false, 173), "getAxle", [], "method", false, false, false, 173), "")) : ("")), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 174
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::default($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getDateSold", [], "method", false, false, false, 174), "d-m-Y"), ""), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 175
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getQuantitySold", [], "method", true, true, false, 175)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getQuantitySold", [], "method", false, false, false, 175), "")) : ("")), "html", null, true);
+                yield "</td>
+            <td>";
+                // line 176
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::default((CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getPriceSold", [], "method", false, false, false, 176) / 100), ""), "html", null, true);
+                yield "</td>
+            <form action=\"/editСartAutoPartsWarehouseSold\" name=\"edit_cart_auto_parts_warehouse_sold\">
+
+              <td><button class=\"btn btn-outline-secondary\" type=\"submit\" name=\"id\" value=\"";
+                // line 179
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getId", [], "method", false, false, false, 179), "html", null, true);
+                yield "\">";
+                yield $this->env->getRuntime('Symfony\UX\Icons\Twig\UXIconRuntime')->renderIcon("bx:edit", ["height" => "30", "width" => "30"]);
+                // line 180
+                yield "</button></td>
+
+            </form>
+            <form action=\"/deleteСartAutoPartsWarehouseSold\" name=\"delete_cart_auto_parts_warehouse_sold\">
+
+              <td><button class=\"btn btn-outline-danger\" type=\"submit\" name=\"id\" value=\"";
+                // line 185
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["information"], "getId", [], "method", false, false, false, 185), "html", null, true);
+                yield "\">";
+                yield $this->env->getRuntime('Symfony\UX\Icons\Twig\UXIconRuntime')->renderIcon("iconoir:delete-circle", ["height" => "30", "width" => "30"]);
+                // line 186
+                yield "</button></td>
+
+            </form>
+          </tr>
+          ";
+            }
+            // line 191
+            yield "          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['information'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 192
+        yield "
+        </tbody>
+      </table>
+    </div>
+  </div>
+  ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        return; yield '';
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName()
+    {
+        return "sales/searchSales.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo()
+    {
+        return array (  550 => 192,  544 => 191,  537 => 186,  533 => 185,  526 => 180,  522 => 179,  516 => 176,  512 => 175,  508 => 174,  504 => 173,  500 => 172,  496 => 171,  492 => 170,  488 => 169,  484 => 168,  480 => 167,  477 => 166,  475 => 165,  471 => 164,  467 => 162,  464 => 161,  460 => 160,  454 => 156,  448 => 153,  444 => 152,  429 => 139,  427 => 138,  417 => 130,  414 => 128,  404 => 127,  393 => 124,  387 => 123,  378 => 121,  373 => 120,  369 => 119,  364 => 117,  356 => 111,  353 => 110,  337 => 97,  333 => 96,  329 => 95,  322 => 91,  318 => 90,  314 => 89,  307 => 85,  303 => 84,  299 => 83,  290 => 77,  286 => 76,  282 => 75,  275 => 71,  271 => 70,  267 => 69,  260 => 65,  256 => 64,  252 => 63,  239 => 52,  230 => 50,  226 => 49,  222 => 48,  218 => 47,  214 => 46,  208 => 42,  199 => 40,  195 => 39,  191 => 38,  187 => 37,  183 => 36,  175 => 31,  171 => 30,  167 => 29,  160 => 25,  156 => 24,  152 => 23,  141 => 15,  138 => 14,  135 => 12,  125 => 11,  113 => 8,  103 => 7,  83 => 5,  63 => 3,  40 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Source("{% extends 'base.html.twig' %}
+
+{% block title %}{{ title_logo }}{% endblock title %}
+
+{% block logo %}{{title_logo}}{% endblock logo %}
+
+{% block Responsive_behaviors %}
+<nav class=\"navbar navbar-expand-md bg-dark\" data-bs-theme=\"dark\">
+  {% endblock Responsive_behaviors %}
+
+  {% block form %}
+
+  {#Форма сохранения номеров деталей#}
+
+  {{ form_start(form_search_sales) }}
+  <div class=\"container-fluid text-center mt-3\">
+    <div class=\"row\">
+
+      <div class=\"col-lg-12 col-xl-7 col-xxl-7\">
+        <div class=\"row\">
+
+          <div class=\"col-sm-6 col-md-3 col-lg-3\">
+            <div class=\"lb\">{{ form_label(form_search_sales.part_number) }}</div>
+            {{ form_widget(form_search_sales.part_number, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.part_number) |nl2br }}
+          </div>
+
+          <div class=\"col-sm-6 col-md-3 col-lg-3\">
+            <div class=\"lb\">{{ form_label(form_search_sales.original_number) }}</div>
+            {{ form_widget(form_search_sales.original_number, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.original_number) |nl2br }}
+          </div>
+
+
+          <div class=\"col-sm-6 col-md-3 col-lg-3\">
+            <div class=\"lb\">{{ form_label(form_search_sales.from_date_sold) }}</div>
+            {{ form_widget(form_search_sales.from_date_sold, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.from_date_sold) |nl2br }}
+            {% for message in app.flashes('[date_sold]') %}
+            {{ message }}
+            {% endfor %}
+          </div>
+
+
+          <div class=\"col-sm-6 col-md-3 col-lg-3\">
+            <div class=\"lb\">{{ form_label(form_search_sales.to_date_sold) }}</div>
+            {{ form_widget(form_search_sales.to_date_sold, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.to_date_sold) |nl2br }}
+            {% for message in app.flashes('[date_sold]') %}
+            {{ message }}
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class=\"col-lg-12 col-xl-5 col-xxl-5\">
+        <div class=\"row justify-content-evenly\">
+
+          <div class=\"col-6\">
+            <div class=\"lb\">{{ form_label(form_search_sales.id_part_name) }}</div>
+            {{ form_widget(form_search_sales.id_part_name, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.id_part_name) |nl2br }}
+          </div>
+
+          <div class=\"col-3\">
+            <div class=\"lb\">{{ form_label(form_search_sales.id_car_brand) }}</div>
+            {{ form_widget(form_search_sales.id_car_brand, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.id_car_brand) |nl2br }}
+          </div>
+
+          <div class=\"col-3\">
+            <div class=\"lb\">{{ form_label(form_search_sales.id_side) }}</div>
+            {{ form_widget(form_search_sales.id_side, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.id_side) |nl2br }}
+          </div>
+        </div>
+        <div class=\"row justify-content-evenly\">
+
+        <div class=\"col-6\">
+            <div class=\"lb\">{{ form_label(form_search_sales.id_counterparty) }}</div>
+            {{ form_widget(form_search_sales.id_counterparty, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.id_counterparty) |nl2br }}
+          </div>
+
+          <div class=\"col-3\">
+            <div class=\"lb\">{{ form_label(form_search_sales.id_body) }}</div>
+            {{ form_widget(form_search_sales.id_body, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.id_body) |nl2br }}
+          </div>
+
+          <div class=\"col-3\">
+            <div class=\"lb\">{{ form_label(form_search_sales.id_axle) }}</div>
+            {{ form_widget(form_search_sales.id_axle, { 'attr': {'class': 'w-100'} }) }}
+            {{ form_errors(form_search_sales.id_axle) |nl2br }}
+          </div>
+
+          
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class=\"row mt-3\">
+      <div class=\"col-12 d-grid gap-2\">
+        {{ form_widget(form_search_sales.button_search_sales, { 'label': 'Поиск', 'attr': {'class': 'btn
+        btn-primary'}}) }}
+      </div>
+    </div>
+
+  </div>
+
+  {{ form_end(form_search_sales) }}
+
+  {% for messages in app.flashes(['delete','Error','successfully']) %}
+  {% for message in messages %}
+    <h2 class=\"mt-3 ms-3\">{{ message }}</h2>
+  {% endfor %}
+  {% endfor %}
+  {% endblock form %}
+
+
+  {% block table %}
+
+  {#Таблица автодеталей#}
+
+ <div class=\"container-fluid text-center pt-4 \">
+    <div class=\"table-responsive\">
+      <table class=\"table table-bordered table-hover table-striped-columns table-sm align-middle 
+        border-info shadow p-3 mb-5 bg-body-tertiary rounded\">
+        <thead class=\"table-secondary\">
+
+          
+          {% if list_sales_auto_parts %}
+          <tr>
+            <th scope=\"col\">№<br>детали</th>
+            <th scope=\"col\">№<br>оригинал</th>
+            <th scope=\"col\">Производитель</th>
+            <th scope=\"col\">Описание<br>детали</th>
+            <th scope=\"col\">Название<br>детали</th>
+            <th scope=\"col\">Марка</th>
+            <th scope=\"col\">Сторона</th>
+            <th scope=\"col\">Кузов</th>
+            <th scope=\"col\">Перед<br>Зад</th>
+            <th scope=\"col\">Дата</th>
+            <th scope=\"col\">Кол-во</th>
+            <th scope=\"col\">Цена</th>
+            <th scope=\"col\">{{ ux_icon('bx:edit', {'height': '30', 'width': '30'}) }}</th>
+            <th scope=\"col\">{{ ux_icon('iconoir:delete-circle', {'height': '30', 'width': '30'}) }}</th>
+          </tr>
+           {% endif %}
+           
+
+        </thead>
+        <tbody class=\"table-group-divider\">
+          {% for information in list_sales_auto_parts %}
+            {% if information %}
+
+          <tr>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getPartNumber() }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails()
+            .getIdOriginalNumber().getOriginalNumber()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getManufacturer()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getAdditionalDescriptions()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdPartName().getPartName()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdCarBrand().getCarBrand()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdSide().getSide()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdBody().getBody()|default('') }}</td>
+            <td>{{ information.getIdAutoPartsWarehouse().getIdDetails().getIdAxle().getAxle()|default('') }}</td>
+            <td>{{ information.getDateSold()|date(\"d-m-Y\")|default('') }}</td>
+            <td>{{ information.getQuantitySold()|default('') }}</td>
+            <td>{{ (information.getPriceSold() / 100)|default('') }}</td>
+            <form action=\"/editСartAutoPartsWarehouseSold\" name=\"edit_cart_auto_parts_warehouse_sold\">
+
+              <td><button class=\"btn btn-outline-secondary\" type=\"submit\" name=\"id\" value=\"{{ information.getId() }}\">{{
+                  ux_icon('bx:edit', {'height': '30', 'width': '30'}) }}</button></td>
+
+            </form>
+            <form action=\"/deleteСartAutoPartsWarehouseSold\" name=\"delete_cart_auto_parts_warehouse_sold\">
+
+              <td><button class=\"btn btn-outline-danger\" type=\"submit\" name=\"id\" value=\"{{ information.getId() }}\">{{
+                  ux_icon('iconoir:delete-circle', {'height': '30', 'width': '30'}) }}</button></td>
+
+            </form>
+          </tr>
+          {% endif %}
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock table %}
+", "sales/searchSales.html.twig", "/var/www/templates/sales/searchSales.html.twig");
+    }
+}
